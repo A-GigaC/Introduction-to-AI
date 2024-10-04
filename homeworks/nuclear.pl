@@ -36,8 +36,7 @@ third(Mon-Principe-Country) :-
     (dif(Mon, 'March'), dif(Principe, 'TP'), dif(Country, 'Zambia')). 
 %4. Реактор, запущенный в Январе - это либо 'TP' реактор, либо реактор из Катара.
 four(Mon-Principe-Country) :- 
-    Mon = "January", (
-        (Country = 'Qatar', dif(Principe, 'TP')); 
+    Mon = 'January', ((Country = 'Qatar', dif(Principe, 'TP')); 
         (dif(Country, 'Qatar'), Principe = 'TP')
     );
     dif(Mon, "January"). 
@@ -83,8 +82,8 @@ hints(Mon-React-Principe-Country) :-
 difBtwReactorsInfo(M-R-P-C, Mi-Ri-Pi-Ci) :- 
     dif(R, Ri), 
     dif(P, Pi),
-    dif(C, Ci).
-    dif(M, Mi), 
+    dif(C, Ci),
+    dif(M, Mi).
  
 solution([X, Y, Z, U]) :- 
     findall(T, hints(T), L), 
